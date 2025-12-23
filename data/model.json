@@ -1,0 +1,782 @@
+{
+  "model_name": "AI Testing Maturity Model",
+  "source_file": "AI_Testing_Maturity_Model_v04.xlsx",
+  "version": "v0.4",
+  "generated_at": "2025-12-23T03:06:54.011050Z",
+  "maturity_levels": [
+    {
+      "level": 1,
+      "name": "No AI Use",
+      "name_full": "Level 1: No AI Use",
+      "ai_concepts": null,
+      "overview": "Fully manual testing processes without any AI support",
+      "what_to_expect": "Manual processes dominate; quality and coverage depend on individual expertise.",
+      "human_focus": "Manual labor"
+    },
+    {
+      "level": 2,
+      "name": "Gen AI Ad-hoc Usage",
+      "name_full": "Level 2: Gen AI Ad-hoc Usage",
+      "ai_concepts": "Prompt engineering; RAG",
+      "overview": "Occasional use of gen AI tools for specific tasks such as drafting test cases or authoring code",
+      "what_to_expect": "Some efficiency gains in repetitive tasks, but overall process remains fragmented and inconsistent.",
+      "human_focus": "Manual review of AI work and experimentation"
+    },
+    {
+      "level": 3,
+      "name": "AI-driven Workflows",
+      "name_full": "Level 3: AI-driven Workflows",
+      "ai_concepts": "Deterministic AI workflows; API calls; integration with test management tools",
+      "overview": "Integrated AI tools automate testing workflows, such as planning and execution.",
+      "what_to_expect": "Improved traceability, risk-based test coverage and better integration with test management platforms.",
+      "human_focus": "Data driven insights begin to inform decisions"
+    },
+    {
+      "level": 4,
+      "name": "Agentic AI",
+      "name_full": "Level 4: Agentic AI",
+      "ai_concepts": "Autonomous agents; fine-tuning; baseline evaluation of framework changes",
+      "overview": "Autonomous agents manage test activities with human oversight.",
+      "what_to_expect": "Dynamic adaptation to changes with smarter defect management and self healing",
+      "human_focus": "Human oversight focuses on governance, not execution"
+    },
+    {
+      "level": 5,
+      "name": "Multi-Agent Teams",
+      "name_full": "Level 5: Multi-Agent Teams",
+      "ai_concepts": "Agentic organizations; MCP; A2A; RL/UL evaluation; lean frameworks; least-privilege identities",
+      "overview": "AI agents collaborate autonomously across systems and teams with minimal intervention.",
+      "what_to_expect": "Rapid innovation cycles and continuous improvement",
+      "human_focus": "Teams focus on strategic goals, not operational details."
+    }
+  ],
+  "high_level_model": [],
+  "simplified_model": {
+    "Test Strategy": {
+      "1": "Test strategy and cases are fully manual, with no AI involvement.",
+      "2": "Generative AI is used occasionally to draft strategy and cases, but final outputs are manual.",
+      "3": "AI workflows help dynamically adjust strategy and generate test cases, integrating with management tools.",
+      "4": "Autonomous agents manage and refine strategy and test design in real time, with human oversight.",
+      "5": "Multi-agent systems continuously optimise strategy and test design without human intervention."
+    },
+    "Test Automation": {
+      "1": "Automation frameworks and scripts are built and maintained manually, with no pipeline integration.",
+      "2": "GenAI accelerates boilerplate and scripting, but maintenance and integration remain mostly manual.",
+      "3": "AI-driven workflows recommend improvements and generate scripts integrated into CI/CD pipelines.",
+      "4": "Agents autonomously refactor frameworks and scripts, validating changes against baseline outcomes.",
+      "5": "Multi-agent systems manage lean, optimised frameworks and scripting end-to-end, with minimal code footprint."
+    },
+    "Data & Environment": {
+      "1": "Test data and environments are manually created and managed, with no observability or automation.",
+      "2": "GenAI assists with data synthesis and environment setup, but processes are still largely manual.",
+      "3": "AI workflows manage synthetic and masked data and orchestrate environments contextually.",
+      "4": "Agents provision data and environments with ephemeral access and deep observability, supervised by humans.",
+      "5": "Multi-agent systems autonomously govern data and environments with zero-touch compliance and tuning."
+    },
+    "Test Management": {
+      "1": "Test execution, regression selection, defect management, and metrics are all manual and ad hoc.",
+      "2": "GenAI helps with test preparation and defect descriptions, but impact on optimisation is limited.",
+      "3": "AI recommends execution sets, adapts regression suites, and links metrics to traceability.",
+      "4": "Agents orchestrate execution, optimise regression, and manage defects and metrics with continuous improvement.",
+      "5": "Multi-agent systems autonomously coordinate execution, regression, defect management, and metrics using advanced learning."
+    },
+    "Test Organization": {
+      "1": "The team has minimal AI skills and a risk-averse, manual-first culture.",
+      "2": "Basic AI exposure and cautious experimentation, with limited leadership support.",
+      "3": "Structured training enables teams to design and operate AI-driven workflows, with an open culture.",
+      "4": "Teams design agent ecosystems with ephemeral identities and least-privilege access, supported by proactive leadership.",
+      "5": "Teams are fully proficient with autonomous multi-agent systems and foster an innovation-first culture."
+    }
+  },
+  "maturity_model": [
+    {
+      "area": "Test Strategy",
+      "dimension": "Test Strategy and Approach",
+      "levels": {
+        "1": "Manual and static test strategy based on experience; no AI support or automation; updates only at major milestones.",
+        "2": "Occasional use of generative AI to draft parts of the test strategy; final strategy remains manually reviewed and refined.",
+        "3": "Integrated AI workflows dynamically adjust the test strategy based on business risk and technology complexity when triggered by testers.",
+        "4": "Autonomous agents define, manage, and refine test strategies in real time, with human oversight.",
+        "5": "Multi-agent systems collaborate to generate and manage the entire test strategy continuously without human intervention."
+      }
+    },
+    {
+      "area": "Test Strategy",
+      "dimension": "Test Plans, Test Case Design & Management",
+      "levels": {
+        "1": "Test plans and test cases are created and maintained manually, with no AI assistance.",
+        "2": "Generative AI occasionally drafts test plans and test cases, but detailed refinement and maintenance remain manual.",
+        "3": "AI workflows (or agents) generate test case designs and comprehensive test cases, maintain traceability, and integrate with test management tools (e.g., Xray, Zephyr) when triggered by testers.",
+        "4": "Autonomous agents independently generate, refine, and maintain optimized risk-based test plans, traceability matrices, and test case designs with minimal human oversight.",
+        "5": "Multi-agent systems continuously optimize risk-based plans, traceability, and design & execution of test cases, minimizing redundancy and aligning to business risk with zero human intervention."
+      }
+    },
+    {
+      "area": "Test Automation",
+      "dimension": "Framework development & maintenance",
+      "levels": {
+        "1": "Frameworks are manually set up from scratch; updates are reactive after issues occur, and no AI assistance is used.",
+        "2": "Developers occasionally use generative AI co-pilots to accelerate boilerplate code generation; integration and maintenance remain predominantly manual.",
+        "3": "Intelligent assistants periodically assess the framework and recommend improvements; updates are semi-automated and approved by engineers.",
+        "4": "AI agents proactively refactor and enhance the framework based on telemetry and change patterns, and evaluate changes against a known baseline of test outcomes, with human supervision.",
+        "5": "Autonomous agents continuously evolve and maintain a patternised, lean framework in real time, minimising code footprint and validating each evolution against baseline outcomes, without human intervention."
+      }
+    },
+    {
+      "area": "Test Automation",
+      "dimension": "Automation development process",
+      "levels": {
+        "1": "Test automation scripts are written and maintained manually; there is no AI involvement or pipeline integration.",
+        "2": "Generative AI assists in drafting scripts; humans review, refine, and maintain them.",
+        "3": "AI-driven workflows generate and update scripts as part of CI/CD pipelines when triggered by engineers.",
+        "4": "Agents autonomously create and refine scripts with human supervision.",
+        "5": "Multi-agent systems autonomously build, refactor, and manage scripts while optimising for performance and compactness; agentic code generation is constrained to avoid profuse boilerplate."
+      }
+    },
+    {
+      "area": "Data & Environment",
+      "dimension": "Test Data Management",
+      "levels": {
+        "1": "Test data is manually created, static, and rarely refreshed; no AI assistance or systematic versioning.",
+        "2": "Generative AI occasionally synthesizes test data for specific scenarios, but manual data management and refresh dominate.",
+        "3": "AI workflows manage both synthetic (fabricated) data generation and production sub-setting/masking, refreshed against coverage matrices and business rules, grounded on a staging data source.",
+        "4": "Agents dynamically provision and manage contextual, risk-aligned test data across scenarios with human supervision, using ephemeral, just-in-time entitlements (least privilege); agent identities do not inherit tester credentials.",
+        "5": "Multi-agent systems autonomously synthesize and manage the entire test data lifecycle across systems and environments without human intervention, enforcing ephemeral entitlements and least-privilege access."
+      }
+    },
+    {
+      "area": "Data & Environment",
+      "dimension": "Test Environment Management",
+      "levels": {
+        "1": "Test environments are provisioned and reset manually; there is no automated monitoring or self-healing.",
+        "2": "Generative AI helps create setup scripts and configurations, but provisioning and resets remain largely manual.",
+        "3": "AI workflows augment CI/CD pipelines with context-aware orchestration (right-sizing, tagging, cost/time optimisation, scheduled tear-downs) per test context—beyond simple pipeline triggers.",
+        "4": "Agents autonomously orchestrate environment provisioning, scaling, monitoring, and resets based on telemetry, with human supervision; deep observability (incl. NPE pattern detection) is enforced via ephemeral JIT/JEA entitlements.",
+        "5": "Multi-agent systems self-manage all environment provisioning, configuration drift, scaling, and teardown across teams with deep observability (incl. NPE detection) and zero human intervention."
+      }
+    },
+    {
+      "area": "Test Management",
+      "dimension": "Test Execution",
+      "levels": {
+        "1": "Testing is performed manually or automated test runs are triggered manually; no AI scheduling or self-healing.",
+        "2": "Generative AI provides guidance or validation suggestions for test execution; testers still schedule and trigger runs.",
+        "3": "AI-driven workflows recommend execution sets and automatically execute tests based on code changes, risk scores, or pipeline events when triggered by testers.",
+        "4": "Agents autonomously coordinate and execute tests, manage retries, and adapt to failures, while humans supervise.",
+        "5": "Multi-agent networks autonomously coordinate end-to-end test execution, optimization, and self-healing across environments with no human involvement."
+      }
+    },
+    {
+      "area": "Test Management",
+      "dimension": "Managing and optimizing regression suite",
+      "levels": {
+        "1": "Regression tests are selected manually; all tests run with the same frequency regardless of value or history; no tagging or mapping.",
+        "2": "Generative AI occasionally identifies redundant or outdated tests; tagging is limited, and execution frequency is static.",
+        "3": "AI workflows analyze code changes and historical test data to adapt the regression suite and execution tiers, triggered by testers.",
+        "4": "Agents autonomously manage regression suite selection, execution frequency, and coverage optimization based on recent outcomes and risk patterns, with human oversight.",
+        "5": "Multi-agent systems continuously manage regression suites end-to-end, including test generation, retirement, tagging, and execution, with a closed loop from incidents introduced by change feeding optimisation decisions."
+      }
+    },
+    {
+      "area": "Test Management",
+      "dimension": "Defect Management",
+      "levels": {
+        "1": "Defects are logged, triaged, and analyzed manually; no AI assistance or automation.",
+        "2": "Generative AI suggests defect titles, descriptions, and potential root causes; logging, routing, and follow-up remain manual.",
+        "3": "AI workflows log, prioritize, and route defects, with testers triggering and reviewing actions.",
+        "4": "Agents autonomously classify, route, and manage defect resolution pipelines; humans oversee; agents cluster NPE-like signatures and embed prevention insights.",
+        "5": "Multi-agent systems autonomously detect, log, cluster, prioritize, fix, retest, and trace defects across systems without human involvement, with deep observability."
+      }
+    },
+    {
+      "area": "Test Management",
+      "dimension": "Metrics & KPIs",
+      "levels": {
+        "1": "Metrics are collected manually on an ad-hoc basis; snapshots are minimal; no real-time dashboards or AI insights.",
+        "2": "Generative AI helps create dashboards and basic metrics snapshots; manual data collection still dominates.",
+        "3": "AI-driven pipelines collect real-time metrics and link them to traceability; testers trigger and review.",
+        "4": "Agents autonomously gather and analyze metrics to provide real-time insights and drive improvements, with human supervision.",
+        "5": "Multi-agent teams autonomously generate, analyse, and act on metrics, using reinforcement learning (RL) and unsupervised learning (UL) to evaluate and refine test selection, coverage, and quality signals continuously."
+      }
+    },
+    {
+      "area": "Test Organization",
+      "dimension": "Team Skills",
+      "levels": {
+        "1": "Team members have minimal to no AI skills or experience.",
+        "2": "Team members have basic exposure to generative AI, retrieval augmented generation (RAG), and prompt engineering, primarily theoretical.",
+        "3": "Testers have undertaken structured training and are able to design and operate AI-driven workflows (APIs, deterministic pipelines).",
+        "4": "Team members are proficient in designing and orchestrating autonomous agent ecosystems, including integration with external tools and function calls, with some human oversight, and enforce ephemeral identities and least-privilege access.",
+        "5": "Team possesses expert skills to manage fully autonomous multi-agent ecosystems, including model control protocols (MCP) and agent-to-agent (A2A) integration, with no manual intervention; identities are ephemeral and never inherit tester credentials."
+      }
+    },
+    {
+      "area": "Test Organization",
+      "dimension": "Team Culture",
+      "levels": {
+        "1": "Team culture is highly risk-averse and manual-first, with strong resistance to AI experimentation and innovation.",
+        "2": "Team cautiously experiments with basic AI tools; risk appetite is low and experiments are isolated.",
+        "3": "Team is open to AI exploration under defined guidelines, regularly conducting controlled experiments and proofs of concept.",
+        "4": "Team proactively embraces AI, regularly experiments and validates results, and adapts processes quickly while following clear governance.",
+        "5": "Culture is innovation-first, continuously experimenting, learning, and iterating with autonomous multi-agent strategies; failure recovery and adaptation are rapid and systemic."
+      }
+    }
+  ],
+  "questionnaire": [
+    {
+      "id": "test-strategy__test-strategy-and-approach__q01",
+      "index": 1,
+      "area": "Test Strategy",
+      "dimension": "Test Strategy and Approach",
+      "question_number_within_dimension": 1,
+      "title": "Strategy Definition",
+      "prompt": "How do you create and manage your test strategy (types of testing, scope and priorities)?",
+      "options": {
+        "1": "We define the strategy manually, based on experience and team input.",
+        "2": "We sometimes use GenAI (e.g., ChatGPT) to draft ideas, but the strategy is still mostly manual.",
+        "3": "We use integrated AI workflows to shape the strategy from project inputs; we trigger and review the output.",
+        "4": "Autonomous agents define and refine the strategy as things change; we supervise and step in when needed.",
+        "5": "Multi-agent teams continuously manage and optimise the whole strategy on their own."
+      }
+    },
+    {
+      "id": "test-strategy__test-strategy-and-approach__q02",
+      "index": 2,
+      "area": "Test Strategy",
+      "dimension": "Test Strategy and Approach",
+      "question_number_within_dimension": 2,
+      "title": "Technology & Methods",
+      "prompt": "How do you choose and evolve testing methods, tools, and techniques?",
+      "options": {
+        "1": "We pick tools and methods manually, and we rarely change unless there’s a problem.",
+        "2": "We occasionally ask GenAI for tool or method suggestions, but adoption is still human-led.",
+        "3": "AI workflows recommend methods and tools for each project context; humans approve and apply.",
+        "4": "Agents proactively choose and apply the best methods and tools, adapting over time with supervision.",
+        "5": "Multi-agent teams handle selection and rollout of methods/tools end-to-end, continuously."
+      }
+    },
+    {
+      "id": "test-strategy__test-plans-test-case-design-management__q03",
+      "index": 3,
+      "area": "Test Strategy",
+      "dimension": "Test Plans, Test Case Design & Management",
+      "question_number_within_dimension": 1,
+      "title": "Test Planning",
+      "prompt": "How do you develop and maintain test plans?",
+      "options": {
+        "1": "We create and update test plans manually.",
+        "2": "GenAI helps us draft test plans sometimes, but we still do the detailed work by hand.",
+        "3": "AI workflows generate and refine test plans when triggered; testers review and adjust.",
+        "4": "Agents create, adapt, and maintain test plans with minimal input; humans supervise.",
+        "5": "Multi-agent teams continuously generate, maintain, and optimise test plans with no human involvement."
+      }
+    },
+    {
+      "id": "test-strategy__test-plans-test-case-design-management__q04",
+      "index": 4,
+      "area": "Test Strategy",
+      "dimension": "Test Plans, Test Case Design & Management",
+      "question_number_within_dimension": 2,
+      "title": "Test Case Lifecycle",
+      "prompt": "How do you create, update, and optimise test cases (and keep traceability current)?",
+      "options": {
+        "1": "We write and maintain test cases manually, and traceability is mostly manual too.",
+        "2": "We sometimes use GenAI to draft test cases, but upkeep and traceability still rely on people.",
+        "3": "AI workflows generate and update test cases and trace links when triggered; humans review.",
+        "4": "Agents manage and improve test cases and traceability continuously, with supervision.",
+        "5": "Multi-agent teams optimise the full test case lifecycle and traceability continuously, zero touch."
+      }
+    },
+    {
+      "id": "test-automation__framework-development-maintenance__q05",
+      "index": 5,
+      "area": "Test Automation",
+      "dimension": "Framework development & maintenance",
+      "question_number_within_dimension": 1,
+      "title": "Framework Evolution",
+      "prompt": "How do you build and improve your automation framework over time?",
+      "options": {
+        "1": "We build and update the framework manually, usually after issues show up.",
+        "2": "Co-pilots help us code faster, but framework design and upkeep are still mostly manual.",
+        "3": "Assistants assess the framework and propose improvements; changes are semi-automated and approved by engineers.",
+        "4": "Agents proactively refactor and enhance the framework, and humans supervise the changes.",
+        "5": "Agents continuously evolve and maintain the framework, validating improvements automatically."
+      }
+    },
+    {
+      "id": "test-automation__framework-development-maintenance__q06",
+      "index": 6,
+      "area": "Test Automation",
+      "dimension": "Framework development & maintenance",
+      "question_number_within_dimension": 2,
+      "title": "Framework Reliability",
+      "prompt": "How do you validate framework changes and keep outcomes consistent?",
+      "options": {
+        "1": "We rely on manual checks and spot testing to catch framework issues.",
+        "2": "We use basic reviews plus GenAI suggestions, but validation is still largely manual.",
+        "3": "Workflows validate changes against known baselines when triggered; humans review results.",
+        "4": "Agents validate changes against baseline outcomes as part of refactoring; humans supervise.",
+        "5": "Agents continuously validate and evolve the framework against baseline outcomes, end-to-end."
+      }
+    },
+    {
+      "id": "test-automation__automation-development-process__q07",
+      "index": 7,
+      "area": "Test Automation",
+      "dimension": "Automation development process",
+      "question_number_within_dimension": 1,
+      "title": "Script Development",
+      "prompt": "How do you create and maintain automation scripts?",
+      "options": {
+        "1": "We write and maintain scripts manually.",
+        "2": "GenAI helps draft scripts, but people still review, fix, and maintain them.",
+        "3": "AI workflows generate and update scripts in the pipeline when triggered; humans approve.",
+        "4": "Agents autonomously create and refine scripts and handle maintenance, with supervision.",
+        "5": "Multi-agent teams build, refactor, and maintain scripts continuously, end-to-end."
+      }
+    },
+    {
+      "id": "test-automation__automation-development-process__q08",
+      "index": 8,
+      "area": "Test Automation",
+      "dimension": "Automation development process",
+      "question_number_within_dimension": 2,
+      "title": "Pipeline Integration",
+      "prompt": "How are scripts governed and integrated into CI/CD (standards, gates, quality)?",
+      "options": {
+        "1": "Integration is manual or inconsistent; quality gates vary by team.",
+        "2": "Some pipeline checks exist, but humans still gate most changes and standards.",
+        "3": "Workflows enforce standards and gates when triggered; approvals are tracked.",
+        "4": "Agents enforce gates and standards automatically; humans supervise exceptions.",
+        "5": "Multi-agent teams manage CI/CD integration and governance continuously with no human involvement."
+      }
+    },
+    {
+      "id": "data-environment__test-data-management__q09",
+      "index": 9,
+      "area": "Data & Environment",
+      "dimension": "Test Data Management",
+      "question_number_within_dimension": 1,
+      "title": "Data Creation & Refresh",
+      "prompt": "How do you create and refresh test data for different scenarios?",
+      "options": {
+        "1": "We create test data manually, and it’s often static and outdated.",
+        "2": "We sometimes use GenAI to create data for a scenario, but management and refresh are still manual.",
+        "3": "AI workflows manage synthetic and rule-based data when triggered, grounded on a staging data source.",
+        "4": "Agents dynamically provision contextual, risk-aligned data, using short-lived, least-privilege access; humans supervise.",
+        "5": "Multi-agent teams continuously synthesize and manage all test data autonomously, end-to-end."
+      }
+    },
+    {
+      "id": "data-environment__test-data-management__q10",
+      "index": 10,
+      "area": "Data & Environment",
+      "dimension": "Test Data Management",
+      "question_number_within_dimension": 2,
+      "title": "Data Governance",
+      "prompt": "How do you manage privacy, traceability, and access controls for test data?",
+      "options": {
+        "1": "Governance is basic; access and traceability are mostly manual.",
+        "2": "We have some guidelines, but controls are still manual and inconsistent.",
+        "3": "Workflows enforce traceability and safer generation when triggered; humans approve access patterns.",
+        "4": "Agents use short-lived identities and least-privilege access, and do not inherit tester credentials; humans supervise.",
+        "5": "Multi-agent teams enforce governance with ephemeral access and least privilege continuously, zero touch."
+      }
+    },
+    {
+      "id": "data-environment__test-environment-management__q11",
+      "index": 11,
+      "area": "Data & Environment",
+      "dimension": "Test Environment Management",
+      "question_number_within_dimension": 1,
+      "title": "Provisioning & Tear-down",
+      "prompt": "How do you provision, scale, and tear down test environments?",
+      "options": {
+        "1": "We provision and reset environments manually.",
+        "2": "GenAI helps with scripts/config, but provisioning and resets are still mostly manual.",
+        "3": "AI workflows orchestrate provisioning and tear-downs based on test context when triggered.",
+        "4": "Agents autonomously orchestrate provisioning and scaling with supervision and controlled access.",
+        "5": "Multi-agent teams self-manage environment provisioning, scaling, and tear-downs continuously."
+      }
+    },
+    {
+      "id": "data-environment__test-environment-management__q12",
+      "index": 12,
+      "area": "Data & Environment",
+      "dimension": "Test Environment Management",
+      "question_number_within_dimension": 2,
+      "title": "Monitoring & Self-healing",
+      "prompt": "How do you detect, diagnose, and fix environment issues (monitoring, self-healing)?",
+      "options": {
+        "1": "We detect issues manually and fix them case by case.",
+        "2": "GenAI suggests fixes sometimes, but humans still diagnose and resolve issues.",
+        "3": "Workflows detect issues and recommend actions when triggered; humans execute or approve fixes.",
+        "4": "Agents self-heal common failures and enforce short-lived access controls; humans supervise.",
+        "5": "Multi-agent teams self-heal with deep observability (e.g., spotting null pointer patterns), zero touch."
+      }
+    },
+    {
+      "id": "test-management__test-execution__q13",
+      "index": 13,
+      "area": "Test Management",
+      "dimension": "Test Execution",
+      "question_number_within_dimension": 1,
+      "title": "Scheduling & Selection",
+      "prompt": "How are test runs selected, triggered, and scheduled?",
+      "options": {
+        "1": "We trigger runs manually, and scheduling is mostly ad-hoc.",
+        "2": "GenAI gives guidance on what to run, but humans still schedule and trigger.",
+        "3": "Workflows recommend execution sets based on changes and risk when triggered by testers.",
+        "4": "Agents coordinate scheduling and execution and manage retries; humans supervise.",
+        "5": "Multi-agent networks coordinate end-to-end execution and scheduling autonomously."
+      }
+    },
+    {
+      "id": "test-management__test-execution__q14",
+      "index": 14,
+      "area": "Test Management",
+      "dimension": "Test Execution",
+      "question_number_within_dimension": 2,
+      "title": "Failure Handling",
+      "prompt": "How do you handle failures, flaky tests, retries, and recovery?",
+      "options": {
+        "1": "We triage failures manually and rerun tests by hand.",
+        "2": "GenAI helps suggest likely causes, but recovery actions are still manual.",
+        "3": "Workflows retry and adapt runs when triggered; humans review and act on insights.",
+        "4": "Agents manage retries, isolate flakiness, and adapt to failures; humans supervise.",
+        "5": "Multi-agent teams self-heal execution across environments continuously, zero touch."
+      }
+    },
+    {
+      "id": "test-management__managing-and-optimizing-regression-suite__q15",
+      "index": 15,
+      "area": "Test Management",
+      "dimension": "Managing and optimizing regression suite",
+      "question_number_within_dimension": 1,
+      "title": "Suite Optimisation",
+      "prompt": "How do you keep the regression suite lean, fast, and effective?",
+      "options": {
+        "1": "We run everything or prune manually; redundancy builds up over time.",
+        "2": "GenAI occasionally flags redundancy, but optimisation is still manual and irregular.",
+        "3": "Workflows optimise tiers and selections using change history when triggered; humans approve.",
+        "4": "Agents autonomously manage tiers, remove redundancy, and tune coverage; humans supervise.",
+        "5": "Multi-agent teams continuously optimise the regression suite end-to-end, autonomously."
+      }
+    },
+    {
+      "id": "test-management__managing-and-optimizing-regression-suite__q16",
+      "index": 16,
+      "area": "Test Management",
+      "dimension": "Managing and optimizing regression suite",
+      "question_number_within_dimension": 2,
+      "title": "Risk Alignment",
+      "prompt": "How do you align regression selection to business risk and real incidents?",
+      "options": {
+        "1": "Regression isn’t strongly linked to risk or incidents.",
+        "2": "We do some manual risk thinking, and GenAI helps occasionally, but it’s inconsistent.",
+        "3": "Workflows map tests to risk signals and adjust selections when triggered; humans review.",
+        "4": "Agents adapt suites based on outcomes and risk patterns; humans supervise.",
+        "5": "Incidents feed continuous multi-agent optimisation of regression, with no human intervention."
+      }
+    },
+    {
+      "id": "test-management__defect-management__q17",
+      "index": 17,
+      "area": "Test Management",
+      "dimension": "Defect Management",
+      "question_number_within_dimension": 1,
+      "title": "Logging & Triage",
+      "prompt": "How are defects captured, enriched, and routed?",
+      "options": {
+        "1": "We log and triage defects manually.",
+        "2": "GenAI helps draft titles/descriptions, but triage and routing are still manual.",
+        "3": "Workflows enrich, route, and prioritise defects when triggered; humans approve outcomes.",
+        "4": "Agents classify, cluster, and route defects with supervision.",
+        "5": "Multi-agent teams detect, log, cluster, prioritise, and route defects autonomously, end-to-end."
+      }
+    },
+    {
+      "id": "test-management__defect-management__q18",
+      "index": 18,
+      "area": "Test Management",
+      "dimension": "Defect Management",
+      "question_number_within_dimension": 2,
+      "title": "Root Cause & Prevention",
+      "prompt": "How do you analyse defects and prevent repeat issues?",
+      "options": {
+        "1": "Root cause analysis is manual and learning is inconsistent.",
+        "2": "GenAI suggests likely causes, but prevention work is still human-driven.",
+        "3": "Workflows cluster patterns and suggest fixes when triggered; humans implement prevention.",
+        "4": "Agents identify recurring signatures and drive prevention insights; humans supervise.",
+        "5": "Multi-agent teams drive cross-system prevention continuously using deep observability, zero touch."
+      }
+    },
+    {
+      "id": "test-management__metrics-kpis__q19",
+      "index": 19,
+      "area": "Test Management",
+      "dimension": "Metrics & KPIs",
+      "question_number_within_dimension": 1,
+      "title": "Metrics Collection",
+      "prompt": "How do you collect and present test metrics?",
+      "options": {
+        "1": "We collect metrics manually and only as ad-hoc snapshots.",
+        "2": "GenAI helps build dashboards, but data collection is still mostly manual.",
+        "3": "Pipelines collect real-time metrics and link to traceability when triggered; humans review.",
+        "4": "Agents gather and analyse metrics continuously to surface insights; humans supervise.",
+        "5": "Multi-agent teams generate, analyse, and act on metrics continuously, autonomously."
+      }
+    },
+    {
+      "id": "test-management__metrics-kpis__q20",
+      "index": 20,
+      "area": "Test Management",
+      "dimension": "Metrics & KPIs",
+      "question_number_within_dimension": 2,
+      "title": "Using Metrics",
+      "prompt": "How do metrics drive improvements (coverage, selection, quality signals)?",
+      "options": {
+        "1": "Metrics rarely drive decisions or improvement actions.",
+        "2": "We review metrics sometimes, but follow-through is inconsistent and manual.",
+        "3": "Workflows recommend improvements when triggered (coverage, selection, stability); humans decide.",
+        "4": "Agents recommend and drive improvements based on signals; humans supervise exceptions.",
+        "5": "Multi-agent teams continuously optimise selection, coverage, and quality signals, end-to-end."
+      }
+    },
+    {
+      "id": "test-organization__team-skills__q21",
+      "index": 21,
+      "area": "Test Organization",
+      "dimension": "Team Skills",
+      "question_number_within_dimension": 1,
+      "title": "Capability",
+      "prompt": "What best describes the team’s AI capability for testing?",
+      "options": {
+        "1": "We have minimal AI skills in the team.",
+        "2": "We have basic GenAI exposure (prompting, RAG ideas), mostly theoretical.",
+        "3": "We can build and run AI workflows (APIs, deterministic pipelines) after structured training.",
+        "4": "We can design and orchestrate autonomous agents and apply strong controls; with oversight.",
+        "5": "We have expert skills to run multi-agent testing end-to-end, with full autonomy."
+      }
+    },
+    {
+      "id": "test-organization__team-skills__q22",
+      "index": 22,
+      "area": "Test Organization",
+      "dimension": "Team Skills",
+      "question_number_within_dimension": 2,
+      "title": "Safe Operation",
+      "prompt": "How well can the team run AI safely (access, identity, controls)?",
+      "options": {
+        "1": "We don’t have defined safety or access practices for AI.",
+        "2": "We’re aware of risks, but controls are basic and mostly manual.",
+        "3": "We use guardrails in workflows when triggered (reviews, logging, approvals).",
+        "4": "We enforce short-lived identities and least-privilege access; agents don’t inherit tester credentials.",
+        "5": "Controls are continuous and autonomous; identities are ephemeral and never inherit tester credentials."
+      }
+    },
+    {
+      "id": "test-organization__team-culture__q23",
+      "index": 23,
+      "area": "Test Organization",
+      "dimension": "Team Culture",
+      "question_number_within_dimension": 1,
+      "title": "Experimentation",
+      "prompt": "How does the team approach AI experimentation and learning?",
+      "options": {
+        "1": "We’re manual-first and cautious about trying AI.",
+        "2": "We run a few small experiments, usually in pockets of the team.",
+        "3": "We experiment in a controlled way with clear guardrails and shared learning.",
+        "4": "We proactively experiment and scale what works, while keeping governance tight.",
+        "5": "AI experimentation and learning are continuous and embedded in how we operate."
+      }
+    },
+    {
+      "id": "test-organization__team-culture__q24",
+      "index": 24,
+      "area": "Test Organization",
+      "dimension": "Team Culture",
+      "question_number_within_dimension": 2,
+      "title": "Leadership & Sponsorship",
+      "prompt": "What best describes leadership support and governance for AI in testing?",
+      "options": {
+        "1": "Minimal leadership support; AI work is rarely sponsored.",
+        "2": "Some leadership interest, mostly for small pilots; governance is still informal.",
+        "3": "Consistent sponsorship with clear boundaries and guardrails.",
+        "4": "Strong sponsorship and investment; leaders actively drive broader adoption with oversight.",
+        "5": "Leadership treats autonomous AI as strategic; governance is built-in and continuous."
+      }
+    }
+  ],
+  "metadata": {
+    "areas": [
+      "Data & Environment",
+      "Test Automation",
+      "Test Management",
+      "Test Organization",
+      "Test Strategy"
+    ],
+    "dimensions": [
+      "Automation development process",
+      "Defect Management",
+      "Framework development & maintenance",
+      "Managing and optimizing regression suite",
+      "Metrics & KPIs",
+      "Team Culture",
+      "Team Skills",
+      "Test Data Management",
+      "Test Environment Management",
+      "Test Execution",
+      "Test Plans, Test Case Design & Management",
+      "Test Strategy and Approach"
+    ],
+    "num_questions": 24,
+    "structure": {
+      "Test Strategy": {
+        "Test Strategy and Approach": [
+          "test-strategy__test-strategy-and-approach__q01",
+          "test-strategy__test-strategy-and-approach__q02"
+        ],
+        "Test Plans, Test Case Design & Management": [
+          "test-strategy__test-plans-test-case-design-management__q03",
+          "test-strategy__test-plans-test-case-design-management__q04"
+        ]
+      },
+      "Test Automation": {
+        "Framework development & maintenance": [
+          "test-automation__framework-development-maintenance__q05",
+          "test-automation__framework-development-maintenance__q06"
+        ],
+        "Automation development process": [
+          "test-automation__automation-development-process__q07",
+          "test-automation__automation-development-process__q08"
+        ]
+      },
+      "Data & Environment": {
+        "Test Data Management": [
+          "data-environment__test-data-management__q09",
+          "data-environment__test-data-management__q10"
+        ],
+        "Test Environment Management": [
+          "data-environment__test-environment-management__q11",
+          "data-environment__test-environment-management__q12"
+        ]
+      },
+      "Test Management": {
+        "Test Execution": [
+          "test-management__test-execution__q13",
+          "test-management__test-execution__q14"
+        ],
+        "Managing and optimizing regression suite": [
+          "test-management__managing-and-optimizing-regression-suite__q15",
+          "test-management__managing-and-optimizing-regression-suite__q16"
+        ],
+        "Defect Management": [
+          "test-management__defect-management__q17",
+          "test-management__defect-management__q18"
+        ],
+        "Metrics & KPIs": [
+          "test-management__metrics-kpis__q19",
+          "test-management__metrics-kpis__q20"
+        ]
+      },
+      "Test Organization": {
+        "Team Skills": [
+          "test-organization__team-skills__q21",
+          "test-organization__team-skills__q22"
+        ],
+        "Team Culture": [
+          "test-organization__team-culture__q23",
+          "test-organization__team-culture__q24"
+        ]
+      }
+    },
+    "num_areas": 5,
+    "num_dimensions": 12,
+    "num_levels": 5,
+    "dimensions_by_area": {
+      "Test Strategy": [
+        "Test Strategy and Approach",
+        "Test Plans, Test Case Design & Management"
+      ],
+      "Test Automation": [
+        "Framework development & maintenance",
+        "Automation development process"
+      ],
+      "Data & Environment": [
+        "Test Data Management",
+        "Test Environment Management"
+      ],
+      "Test Management": [
+        "Test Execution",
+        "Managing and optimizing regression suite",
+        "Defect Management",
+        "Metrics & KPIs"
+      ],
+      "Test Organization": [
+        "Team Skills",
+        "Team Culture"
+      ]
+    },
+    "question_ids_by_dimension": {
+      "Test Strategy": {
+        "Test Strategy and Approach": [
+          "test-strategy__test-strategy-and-approach__q01",
+          "test-strategy__test-strategy-and-approach__q02"
+        ],
+        "Test Plans, Test Case Design & Management": [
+          "test-strategy__test-plans-test-case-design-management__q03",
+          "test-strategy__test-plans-test-case-design-management__q04"
+        ]
+      },
+      "Test Automation": {
+        "Framework development & maintenance": [
+          "test-automation__framework-development-maintenance__q05",
+          "test-automation__framework-development-maintenance__q06"
+        ],
+        "Automation development process": [
+          "test-automation__automation-development-process__q07",
+          "test-automation__automation-development-process__q08"
+        ]
+      },
+      "Data & Environment": {
+        "Test Data Management": [
+          "data-environment__test-data-management__q09",
+          "data-environment__test-data-management__q10"
+        ],
+        "Test Environment Management": [
+          "data-environment__test-environment-management__q11",
+          "data-environment__test-environment-management__q12"
+        ]
+      },
+      "Test Management": {
+        "Test Execution": [
+          "test-management__test-execution__q13",
+          "test-management__test-execution__q14"
+        ],
+        "Managing and optimizing regression suite": [
+          "test-management__managing-and-optimizing-regression-suite__q15",
+          "test-management__managing-and-optimizing-regression-suite__q16"
+        ],
+        "Defect Management": [
+          "test-management__defect-management__q17",
+          "test-management__defect-management__q18"
+        ],
+        "Metrics & KPIs": [
+          "test-management__metrics-kpis__q19",
+          "test-management__metrics-kpis__q20"
+        ]
+      },
+      "Test Organization": {
+        "Team Skills": [
+          "test-organization__team-skills__q21",
+          "test-organization__team-skills__q22"
+        ],
+        "Team Culture": [
+          "test-organization__team-culture__q23",
+          "test-organization__team-culture__q24"
+        ]
+      }
+    }
+  }
+}
